@@ -1,0 +1,30 @@
+h1 {
+  color: blue;
+}
+
+.nav {
+  background: #303030;
+}
+
+.nav-link {
+  color: white;
+}
+
+#title {
+  color: white;
+  text-align: center;
+}
+
+.jumbotron {
+  color: white;
+  text-align: center;
+  background: #303030;
+}
+
+.container {
+  margin-top: 10%;
+}
+
+.row {
+  text-align: center;
+}
