@@ -1,28 +1,30 @@
 import React from "react";
+import { Nav } from 'react-bootstrap';
+
 
 function Contact() {
   return (
-		<div>
+		<>
 			{/* Nav */}
-      <ul className="nav justify-content-end">
-        <li className="nav-item">
-          <a className="nav-link" href="/">
+      <Nav className="justify-content-end">
+        <Nav.Item>
+          <Nav.Link href="/">
             Home
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/about">
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/about">
             About
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/contact">
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/contact">
             Contact
-          </a>
-        </li>
-      </ul>
-			<h1>Contact</h1>
-		</div>
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <h1>Contact</h1>
+		</>
 	)
 }
 

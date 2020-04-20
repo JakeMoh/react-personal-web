@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./component/Home";
 import About from "./component/About";
 import Contact from "./component/Contact";
+import Project from "./component/Project";
+import Comment from "./component/project/Comment";
+
 import Notfound from "./component/Notfound";
 
 // Styles
@@ -20,6 +23,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route exact path="/project" component={Project} />
+          <Route path="/project/comment" component={Comment} />
+
           {/* If no url matches the above return not found page to the user */}
           <Route component={Notfound} />
         </Switch>

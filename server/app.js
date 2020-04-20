@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = 8080;
+const PORT = 3000;
 
 const redisClient = redis.createClient();
 
@@ -49,6 +49,32 @@ app.get('/send', function(req, res) {
   console.log("/send");
   res.send("Hi is sent to you!");
 });
+
+///////////////////////////
+
+app.post('/api/postComment', async (req, res) => {
+
+  console.log(req.body.name);
+  console.log(req.body.comment);
+  
+  redisClient.hset('nameComment', req.body.name, req.body.comment);
+  res.sendStatus(200);
+})
+
+app.get('/api/getComment', async (req, res) => {
+  redisClient.hgetall('nameComment', (err, values) => {
+    console.log("GET")
+    console.log(values);
+    res.send(values);
+  });
+});
+
+
+
+
+
+
+///////////////////////////
 
 app.listen(PORT, () => {
   console.log("Connected to express API server");

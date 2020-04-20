@@ -1,0 +1,28 @@
+#jumbotron-container {
+  margin-top: 10%;
+}
+
+.row {
+  text-align: center;
+}
+
+.jumbotron {
+  color: white;
+  text-align: center;
+  background: #303030;
+}
+
+.container {
+  margin-top: 10%;
+}
+
+.home-button {
+  color: #303030;
+  background-color: white;
+  border-color: white;
+}
+
+.home-button:hover {
+  color: #303030;
+  border-color: white;
+}
