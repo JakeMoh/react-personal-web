@@ -15,27 +15,27 @@ function Comment() {
 
   async function updateComment() {
     let jsonBody: commentInfo = {name, comment}
-    axios.post(`http://localhost:3000/api/postComment`, jsonBody)
+    axios.post(`/api/postComment`, jsonBody)
       .then(res => {
         console.log("POST");
         console.log(res.data);
-        // axios.get(`http://localhost:3000/api/getComment`)
-        //   .then(res => {
-        //     console.log("GET");
-        //     console.log(res.data);
-        //     setNameComment(res.data);
-        // })
-    })
-  }
-
-  useEffect(() => {
-    axios.get(`http://localhost:3000/api/getComment`)
+        axios.get(`/api/getComment`)
           .then(res => {
             console.log("GET");
             console.log(res.data);
             setNameComment(res.data);
         })
-  });
+    })
+  }
+
+  useEffect(() => {
+    axios.get(`/api/getComment`)
+          .then(res => {
+            console.log("GET");
+            console.log(res.data);
+            setNameComment(res.data);
+        })
+  }, []);
   
   function renderNameComment() {
     let c: any = nameComment as any;
@@ -44,15 +44,14 @@ function Comment() {
     console.log("WORKING");
     console.log(c as Object);
 
-    let d = Object.keys(c).map((key) => {
+    Object.keys(c).forEach((key, index) => {
       // arr.push(<p key={key}>{key} {c[key]}</p>);
       arr.push(
-        <tr key={key}>
+        <tr key={index}>
           <td className="comment-table-box">{key}</td>
           <td className="comment-table-box">{c[key]}</td>
         </tr>
       );
-
     })
     
     return arr;
@@ -78,9 +77,9 @@ function Comment() {
           </Nav.Link>
         </Nav.Item>
       </Nav>
-      <h1>Comment Here</h1>
-      <hr />
       <Container fluid>
+        <h1>Comment Here</h1>
+        <hr />
         <Form>
           <Form.Row>
             <Form.Group as={Col} md="4" controlId="formGroupEmail">
@@ -92,11 +91,12 @@ function Comment() {
               <Form.Control placeholder="Enter Comment"  onChange={(event: any) => setComment(String(event.target.value))}/>
             </Form.Group>
           </Form.Row>
-          <Button onClick={() => {updateComment()}}>Send</Button>
+          <Button onClick={() => {updateComment()}}>Submit</Button>
         </Form>
       </Container>
       {/* {console.log(name)}
       {console.log(comment)} */}
+      <Container fluid>
       <h3>Comments</h3>
       <Table striped bordered hover>
         <thead>
@@ -109,6 +109,7 @@ function Comment() {
           {renderNameComment()}
         </tbody>
       </Table>
+      </Container>
 		</>
 	)
 }

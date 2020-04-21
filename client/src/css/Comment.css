@@ -1,3 +1,7 @@
 .comment-table-box {
-  width: 50%;
+  word-wrap: break-word;
+}
+
+.table {
+  table-layout: fixed;
 }

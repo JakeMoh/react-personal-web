@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Nav } from 'react-bootstrap';
-import axios from 'axios';
 
 function About() {
   return (

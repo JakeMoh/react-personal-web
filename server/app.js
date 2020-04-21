@@ -11,16 +11,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = 3000;
+const PORT = 5000;
 
-const redisClient = redis.createClient();
-
-// {
-//   host: keys.redisHost,
-//   port: keys.redisPort,
-//   // If we lose connect, try to reconnect once every 1 second
-//   retry_strategy: () => 1000
-// }
+const redisClient = redis.createClient({host: keys.redisHost, port: keys.redisPort});
 
 redisClient.on("error", function(error) {
   console.error(error);
@@ -54,7 +47,9 @@ app.get('/send', function(req, res) {
 
 app.post('/api/postComment', async (req, res) => {
 
+  console.log("name");
   console.log(req.body.name);
+  console.log("comment");
   console.log(req.body.comment);
   
   redisClient.hset('nameComment', req.body.name, req.body.comment);
