@@ -78,7 +78,7 @@ function Comment() {
         </Nav.Item>
       </Nav>
       <Container fluid>
-        <h1>Comment Here</h1>
+        <h1>Comment Here!!</h1>
         <hr />
         <Form>
           <Form.Row>
