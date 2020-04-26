@@ -3,7 +3,13 @@ import { Nav, Form, Button, Container, Col, Table } from 'react-bootstrap';
 import axios from 'axios';
 import '../../css/Comment.css';
 
-interface commentInfo {
+interface CommentInfo {
+  name: string;
+  comment: string;
+}
+
+interface UserInfo {
+  user_id: number;
   name: string;
   comment: string;
 }
@@ -11,48 +17,45 @@ interface commentInfo {
 function Comment() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [nameComment, setNameComment] = useState({});
+  const [nameComment, setNameComment] = useState<UserInfo[]>([]);
 
   async function updateComment() {
-    let jsonBody: commentInfo = {name, comment}
-    axios.post(`/api/postComment`, jsonBody)
+    let jsonBody: CommentInfo = {name, comment}
+    axios.post(`/api/users`, jsonBody)
       .then(res => {
-        console.log("POST");
-        console.log(res.data);
-        axios.get(`/api/getComment`)
+        // console.log("POST");
+        // console.log(res.data);
+        axios.get(`/api/users`)
           .then(res => {
-            console.log("GET");
-            console.log(res.data);
+            // console.log("GET");
+            // console.log(res.data);
             setNameComment(res.data);
         })
     })
   }
 
   useEffect(() => {
-    axios.get(`/api/getComment`)
+    axios.get(`/api/users`)
           .then(res => {
-            console.log("GET");
-            console.log(res.data);
+            // console.log("GET");
+            // console.log(res.data);
             setNameComment(res.data);
         })
   }, []);
+
+
   
   function renderNameComment() {
-    let c: any = nameComment as any;
-    let arr: any[] =[]
+    let arr: any[] =[];
 
-    console.log("WORKING");
-    console.log(c as Object);
-
-    Object.keys(c).forEach((key, index) => {
-      // arr.push(<p key={key}>{key} {c[key]}</p>);
+    for (const row of nameComment) {
       arr.push(
-        <tr key={index}>
-          <td className="comment-table-box">{key}</td>
-          <td className="comment-table-box">{c[key]}</td>
+        <tr key={row.user_id}>
+          <td className="comment-table-box">{row.name}</td>
+          <td className="comment-table-box">{row.comment}</td>
         </tr>
-      );
-    })
+      )
+    }
     
     return arr;
   }
