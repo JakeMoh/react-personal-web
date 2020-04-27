@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav } from 'react-bootstrap';
-
+import { Nav, Jumbotron, Container } from 'react-bootstrap';
+import "../css/Contact.css"
 
 function Contact() {
   return (
@@ -23,7 +23,13 @@ function Contact() {
           </Nav.Link>
         </Nav.Item>
       </Nav>
-      <h1>Contact</h1>
+      <Jumbotron fluid id="contact-jumbotron">
+        <Container>
+          <h4>
+            jakem5531@gmail.com
+          </h4>
+        </Container>
+      </Jumbotron>
 		</>
 	)
 }

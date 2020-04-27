@@ -6,14 +6,18 @@
   text-align: center;
 }
 
+/*
+.container {
+  margin-top: 10%;
+}
+*/
+
 .jumbotron {
   color: white;
   text-align: center;
   background: #303030;
-}
-
-.container {
-  margin-top: 10%;
+  padding-top: 15vh;
+  height: 50vh;
 }
 
 .home-button {

@@ -25,7 +25,7 @@ function Home() {
       </Nav>
 
       {/* JUMBOTRON */}
-      <Jumbotron fluid>
+      <Jumbotron fluid id="jumbotron">
         <Container>
           <h1 className="display-4">
             Jake Moh
