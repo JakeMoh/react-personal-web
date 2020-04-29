@@ -34,37 +34,28 @@ function About() {
             ― Steve Jobs
           </h4>
           <p id="about-me">
-            I am a 3rd year student at University of British Columbia majoring in 
-            Computer Science and I am currently working as an software developer intern at SAP 
-            located in downtown Vancouver.
 
-            Also, as a part of the coding team in Visual Cognition Lab at UBC, I help my 
-            team of 10 members to develop and maintain javascript framework used for 
-            conducting visualization experiments.
+          My name is Jake Moh, and I am a third-year Computer Science student at The University of
+          British Columbia. Currently, I am working as a software developer at SAP, Vancouver.
+          Furthermore, I am apart of the coding team at The Visual Cognition Lab in UBC, where I help
+          my team of ten members develop and maintain Javascript frameworks that are used for
+          conducting visualization experiments. During my studies, I learned about Software 
+          Construction, Algorithms and Data Structures, Computer Systems, Software Engineering, 
+          Relational Databases.
 
-            During my study I have taken courses such as Software Construction, 
-            Algorithms and Data Structures, Computer Systems, Software Engineering, 
-            Relational Databases.
           </p>
           <br/>
           <p>
-            This degree is not my first degree. I hold Bachelor of Science in human biology and 
-            animal physiology from University of Toronto. 
-            
-            During my time, I had this feeling of unbelonging. 
-            
-            As I am a person who finds joy in tackling complex problems and solving them, I 
-            couldn't find a great meaning in my life during my study.
-            
-            Therefore, I decided to try what programming and computer science is like and my 
-            first project was making a simple python calculator and I immediately feel in love 
-            with it. 
-            
-            Honestly, I was very hesitant to come to Vancouver leaving all my friends and 
-            family behind, but I decided to follow my passion and it turns out to be the best 
-            decision I made in my life.
-
-            I believe best job is the job you love because by then, it wouldn't feel like a job anymore.
+          This Computer Science degree is not my first degree, as I hold a Bachelor of Science in Human
+          Biology and Animal Physiology from The University of Toronto. During my first degree, I
+          realized that Biology was not my passion, as I am a person who finds joy in tackling and solving
+          complex problems, thus I could not find great meaning in my life during my studies in Toronto.
+          Therefore, I decided to try programming and computer science and upon the completion of my
+          first project of designing a simple python calculator, I immediately fell in love and realized my
+          passion for Computer Science. At first, I was very hesitant about coming to Vancouver because I
+          had to leave family and friends, however, I decided to follow my passions and it turned out to be
+          the best decision of my life. I believe that the best job, is the job that you love, because then it
+          would not feel like a job anymore, but a passion.
           </p>
         </Container>
       </Jumbotron>
