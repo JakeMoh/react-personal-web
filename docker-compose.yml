@@ -1,37 +1,6 @@
 version: '3'
+
 services:
-  redis:
-    image: redis:latest
-  postgres:
-    image: postgres:latest
-    environment:
-      - POSTGRES_USER=jake
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=personal_project
-  api:
-    build:
-      context: ./server
-    environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - POSTGRES_USER=jake
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_DB=personal_project
-    volumes:
-      - /app/node_modules
-      - ./server:/app
-    depends_on:
-      - redis
-      - postgres
-  client:
-    stdin_open: true
-    build:
-      context: ./client
-    volumes:
-      - /app/node_modules
-      - ./client:/app
   nginx:
     image: nginx:1.15-alpine
     restart: unless-stopped
