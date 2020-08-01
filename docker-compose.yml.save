@@ -2,17 +2,14 @@ version: '3'
 
 services:
   redis:
-    container_name: redis 
     image: redis:latest
   postgres:
-    container_name: postgres    
     image: postgres:latest
     environment:
       - POSTGRES_USER=jake
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=personal_project
   api:
-    container_name: api
     build:
       context: ./server
     environment:
@@ -30,51 +27,21 @@ services:
       - redis
       - postgres
   client:
-    container_name: client
     stdin_open: true
     build:
       context: ./client
     volumes:
       - /app/node_modules
-      - ./client:/app
+      - ./client
   nginx:
-    container_name: nginx
     image: nginx:mainline-alpine
     restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
     volumes:
       - web-root:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - dhparam:/etc/ssl/certs
     depends_on:
       - client
-  certbot:
-    container_name: certbot
-    image: certbot/certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email jakem5531@gmail.com --agree-tos --no-eff-email --force-renewal -d jakemoh.com  -d www.jakemoh.com
- 
-volumes:
-  certbot-etc:
-  certbot-var:
-  web-root:
-    driver: local
-    driver_opts:
-      type: none
-      device: /root/react-personal-web/web-root_folder
-      o: bind
-  dhparam:
-    driver: local
-    driver_opts:
-      type: none
-      device: /root/react-personal-web/dhparam/
-      o: bind
