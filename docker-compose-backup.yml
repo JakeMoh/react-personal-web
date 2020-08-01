@@ -67,6 +67,11 @@ volumes:
   certbot-etc:
   certbot-var:
   web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /root/react-personal-web/web-root_folder
+      o: bind
   dhparam:
     driver: local
     driver_opts:
