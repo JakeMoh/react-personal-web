@@ -81,13 +81,13 @@ class Contact extends Component {
 					   <h4>Address and Phone</h4>
 					   <p className="address">
 						   {name}<br />
-						   {street} <br />
-						   {city}, {state} {zip}<br />
+						   {/* {street} <br /> */}
+						   {city}, {state} <br />
 						   <span>{phone}</span>
 					   </p>
 				   </div>
 
-               <div className="widget widget_tweets">
+               {/* <div className="widget widget_tweets">
                   <h4 className="widget-title">Latest Tweets</h4>
                   <ul id="twitter">
                      <li>
@@ -107,7 +107,7 @@ class Contact extends Component {
                         <b><a href="#">3 Days Ago</a></b>
                      </li>
                   </ul>
-		         </div>
+		         </div> */}
             </aside>
       </div>
    </section>

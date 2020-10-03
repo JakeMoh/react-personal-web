@@ -1,0 +1,11 @@
+.comment-table-box {
+  word-wrap: break-word;
+}
+
+.table {
+  table-layout: fixed;
+}
+
+.trash-button {
+  width: 68px;
+}
