@@ -2,7 +2,7 @@
   "main": {
     "name":"Jake Moh",
     "occupation":"Developer",
-    "description":"I am a third year UBC student majoring in computer science. I chose to do computer science because I enjoy tackling challenging problems and learn new things",
+    "description":"I am a third year UBC student majoring in computer science. I chose to do computer science because I enjoy tackling challenging problems and learning new things",
     "image":"profilepic.jpg",
     "bio":"I always seek for more challenges and I am comfortable with Docker, Kubernetes, JavaScript, HTML, CSS, React, Python, Go, Git, Concourse, Node.js, SQL, C, C++. In my free time I like to take photos and code",
     "contactmessage":"Contact",
