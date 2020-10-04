@@ -4,7 +4,7 @@
     "occupation":"Developer",
     "description":"I am a third year UBC student majoring in computer science. I chose to do computer science because I enjoy tackling challenging problems and learn new things",
     "image":"profilepic.jpg",
-    "bio":"I always seek for more challenge and I am comfortable with Docker, Kubernetes, JavaScript, HTML, CSS, React, Python, Go, Git, Concourse, Node.js, SQL, C, C++. In my free time I like to take photos and code",
+    "bio":"I always seek for more challenges and I am comfortable with Docker, Kubernetes, JavaScript, HTML, CSS, React, Python, Go, Git, Concourse, Node.js, SQL, C, C++. In my free time I like to take photos and code",
     "contactmessage":"Contact",
     "email": "jakem5531@gmail.com",
     "phone": "1-647-526-1877",
@@ -30,7 +30,7 @@
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage":"",
     "education":[
       {
         "school":"University of British Columbia",
